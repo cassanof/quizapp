@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/shared/bottom_nav.dart';
 
 class AboutScreen extends StatelessWidget {
   @override
@@ -12,7 +11,6 @@ class AboutScreen extends StatelessWidget {
       body: Center(
         child: Text('About this app...'),
       ),
-      bottomNavigationBar: AppBottomNav(),
     );
   }
 }
