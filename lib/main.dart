@@ -6,8 +6,11 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:quizapp/services/auth.dart';
 
 import 'screens/screens.dart';
+import 'services/services.dart';
 
 void main() => runApp(MyApp());
+
+// TODO: Topics Screen
 
 class MyApp extends StatelessWidget {
   @override
@@ -48,6 +51,35 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ), // MaterialApp
+    );
+  }
+}
+
+// Shared Data
+class QuizState with ChangeNotifier {
+  double _progress = 0;
+  Option _selected;
+
+  final PageController controller = PageController();
+
+  get progress => _progress;
+
+  get selected => _selected;
+
+  set progress(double newValue) {
+    _progress = newValue;
+    notifyListeners();
+  }
+
+  set selected(Option newValue) {
+    _selected = newValue;
+    notifyListeners();
+  }
+
+  void nextPage() async {
+    await controller.nextPage(
+      duration: Duration(milliseconds: 500),
+      curve: Curves.easeOut,
     );
   }
 }

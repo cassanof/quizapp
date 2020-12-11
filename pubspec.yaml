@@ -32,6 +32,8 @@ dependencies:
 
   provider: ^4.3.2+2
 
+  rxdart: ^0.25.0
+
   cloud_firestore: ^0.12.9+5
 
   google_sign_in: ^4.5.6
